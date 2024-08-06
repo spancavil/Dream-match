@@ -1,36 +1,26 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# ATC Dream Match
 
-## Getting Started
+Aplicación responsive para generar partidos de fútbol entre 2 equipos de 5 jugadores. 
 
-First, run the development server:
+### Tecnologías
+- NextJS
+- Tailwind CSS
+- Typescript
+- Context con reducers
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+### Para levantar el proyecto:
+1. Crear el .env.example con las siguientes variables
+```
+NEXT_PUBLIC_API_URL=http://localhost:3000
+NEXT_PUBLIC_base_url=https://apiv3.apifootball.com
+NEXT_PUBLIC_API_key=9a6db0fa750f0dd34c271d9fd791df63b31ae91c3e2fb217eaf3ff9dfbbb4602
+NEXT_PUBLIC_country_name=Argentina
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+2. Generar y correr la imagen con Docker:
+```sh
+docker build -t nextapp .
+docker run --name nextapp -p 3000:3000 -d nextapp
+```
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+3. Abrir `localhost:3000` desde el navegador
